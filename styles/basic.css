@@ -1,11 +1,38 @@
 * {
     box-sizing: border-box;
-    margin: 0;
 }
 
 body {
+    margin: 0;
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
+    color: var(--co-black);
+    background: url(../assets/bg/back_2-min.jpg) center/cover no-repeat
+
+    /* font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
+    font-style: normal; */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    background-color: var(--co-purple);
+    border-radius: 10px;
+    color: var(--co-white);
+    font-size: 24px;
+    font-weight: 400;
 }
