@@ -11,6 +11,7 @@
 }
 
 .hero__content {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -28,7 +29,6 @@
   font-style: italic;
   font-weight: 500;
 }
-
 
 .hero__img img {
   max-width: 600px;
@@ -67,6 +67,7 @@
 
 .hero__divider {
   margin: 30px auto;
+  text-align: center;
 }
 
 @media (max-width: 1150px) {
@@ -78,8 +79,8 @@
 
 @media (max-width: 992px) {
   .hero__container {
-    flex-direction: column;
-    text-align: center;
+   flex-direction: column;
+    align-items: center;
     gap: 50px;
   }
 
@@ -106,6 +107,10 @@
 }
 
 @media (max-width: 636px) {
+  .hero__content {
+    text-align: center;
+  }
+
   .hero__title {
     font-size: 32px;
   }
@@ -118,9 +123,8 @@
   }
 
   .hero__divider {
-  margin: 10px 20.hero__block-arrow {
-  margin-top: 10px;
-  margin-left: 100px;
-}px;
-}
+    margin: 10px 20px;
+    margin-top: 10px;
+    /* margin-left: 100px; */
+  }
 }
