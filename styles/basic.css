@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: "Montserrat", sans-serif;
-    color: var(--co-black);
+    color: var(--co-grey);
     background: url(../assets/bg/back_2-min.jpg) center/cover no-repeat
 
     /* font-optical-sizing: auto;
@@ -14,12 +14,14 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 h1 {
     margin: 10px;
+    color: var(--co-black);
+
 }
 
 a {
@@ -36,3 +38,4 @@ a {
     font-size: 24px;
     font-weight: 400;
 }
+
