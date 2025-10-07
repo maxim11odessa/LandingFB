@@ -62,8 +62,131 @@
   position: relative;
 }
 
+.terms__diag-mobile {
+  display: none;
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(220px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Элемент, который должен «въезжать» */
+.terms__diag-1st {
+  opacity: 0;
+  will-change: transform, opacity;
+
+  /* Магия CSS без JS: анимация привязана к видимости элемента */
+  animation-name: slide-in-right;
+  animation-duration: 10s; /* скорость проигрывания */
+  animation-fill-mode: both;
+
+  /* Привязка к таймлайну прокрутки элемента (view timeline) */
+  animation-timeline: view(); /* поддержка в новых Chromium/Safari */
+  animation-range: entry 0% cover 40%;
+  /* entry→ старт когда край элемента входит во вьюпорт,
+     cover 40% → заканчиваем, когда ~40% элемента покрыли вьюпорт */
+}
+
+/* уважение настроек пользователей */
+@media (prefers-reduced-motion: reduce) {
+  .terms__diag-1st {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-220px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Элемент, который должен «въезжать» */
+.terms__diag-2nd {
+  opacity: 0;
+  will-change: transform, opacity;
+
+  /* Магия CSS без JS: анимация привязана к видимости элемента */
+  animation-name: slide-in-left;
+  animation-duration: 10s; /* скорость проигрывания */
+  animation-fill-mode: both;
+
+  /* Привязка к таймлайну прокрутки элемента (view timeline) */
+  animation-timeline: view(); /* поддержка в новых Chromium/Safari */
+  animation-range: entry 0% cover 40%;
+  /* entry→ старт когда край элемента входит во вьюпорт,
+     cover 40% → заканчиваем, когда ~40% элемента покрыли вьюпорт */
+}
+
+/* уважение настроек пользователей */
+@media (prefers-reduced-motion: reduce) {
+  .terms__diag-2nd {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (max-width: 636px) {
   .terms__diag {
     display: none;
   }
+
+  .terms__list {
+    margin: 0 20px;
+  }
+
+  .terms__diag-mobile {
+    margin: 50px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+.arrow-mini-r {
+  transform: rotate(270deg);
+  color: var(--co-black);
+  min-width: 32px;
+  min-height: 32px;
+  margin-top: 30px;
 }
+
+.arrow-mini-l {
+  transform: rotate(90deg);
+  color: var(--co-black);
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.m-r{
+  margin-left: 30px;
+}
+
+.m-l {
+  margin-right: 20px;
+}
+
+.terms__wrapper {
+  display: flex;
+}
+
+.terms__diag-wrapper h4 {
+  font-weight: 500;
+}
+
+}
+
