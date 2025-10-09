@@ -3,12 +3,14 @@
 .cta__container {
 }
 .cta__wrapper-1 {
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 22px;
 }
 .cta__img {
   max-width: 490px;
+  width: 100%;
   height: auto;
 }
 .cta__title {
